@@ -1,0 +1,291 @@
+body {
+    background-color: black; /* Light grey background color */
+    font-size: 30px;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+    padding-top: 120px; /* Adjust this value based on the height of your header */
+    position: relative; /* Ensure the body is positioned relative for the pseudo-element */
+    cursor: url('079.png'), auto; /* Use a custom cursor image */
+    font-family: 'Source Code Pro', 'Courier New', monospace; /* Use Consolas font */
+}
+
+.container {
+    margin: 0 40px; /* Add left and right margins */
+}
+
+
+button {
+    background-color: #2384c0; /* Green background color */
+    color: whitesmoke; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px; /* Rounded corners */
+}
+
+button:hover {
+    background-color: #186797; /* Darker green on hover */
+}
+
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit;
+}
+
+a:link, a:visited {
+    color: inherit; /* Ensure links retain their original color */
+}
+
+
+header nav ul li a:hover {
+    color: #2384c0; /* Change color to blue on hover */
+}
+
+/* Body link styles */
+main a:hover {
+    color: white; /* Change color to white on hover */
+}
+
+.section-divider-1 {
+    background-color: black; /* Light red background color */
+    padding: 20px;
+    margin: 20px 0;
+    margin: 0 100px;
+}
+
+.section-divider-2 {
+    background-color: #ffcccc; /* Light red background color */
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.photo-gallery img {
+    height: 300px; /* Set a fixed height for the images */
+    width: auto; /* Allow the width to be the original width of the photo */
+    object-fit: cover; /* Crop the images to fit the container */
+}
+
+/* New styles for header and navigation */
+header {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background color with 80% opacity */
+    padding: 50px 0; /* Increase padding to make the header taller */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; /* Fix the header at the top of the viewport */
+    width: 100%; /* Ensure the header spans the full width of the viewport */
+    top: 0; /* Position the header at the top */
+    z-index: 1000; /* Ensure the header is above other content */
+}
+
+header .site-title {
+    color: white; /* White text color for site title */
+    font-size: 50px; /* Larger font size */
+    margin-left: 20px; /* Add some space to the left */
+    font-family: 'Source Code Pro', 'Courier New', monospace; /* Apply League Spartan font to the body */
+    flex: 1; /* Allow the site title to grow and take up remaining space */
+}
+
+nav {
+    flex: 2; /* Allow the navigation to take up available space */
+}
+
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display list items in a row */
+    justify-content: center; /* Center the navigation links */
+    gap: 40px; /* Add some space between the links */
+}
+
+nav ul li {
+    margin: 0 15px; /* Add some space between the links */
+}
+
+nav ul li a {
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline */
+    font-size: 28px; /* Increase font size */
+    font-family: 'Source Code Pro', 'Courier New', monospace; /* Use Source Code Pro font */
+}
+
+nav ul li a:hover {
+    text-decoration: none; 
+}
+
+/* Styles for footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background color with 80% opacity */
+    padding: 50px 0; /* Padding for the footer */
+    text-align: center; /* Center the text */
+}
+
+footer nav ul {
+    justify-content: center; /* Center the navigation links */
+    gap: 20px; /* Add some space between the links */
+    display: flex; /* Display list items in a row */
+}
+
+footer nav ul li {
+    display: inline-block; /* Display list items inline */
+}
+
+footer nav ul li a {
+    font-size: 64px; /* Font size for the icons */
+    color: white; /* White color for the icons */
+}
+
+footer nav ul li a:hover {
+    color: #2384c0; /* Change color on hover */
+}
+
+/* Styles for profile section */
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between the profile photo and text */
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.profile-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 35px;
+    color: white;
+    flex: 1;
+    min-width: 300px;
+}
+
+.profile-text p {
+    margin-inline: auto;
+}
+
+.profile-text .line {
+    visibility: visible; /* Hide text initially */
+    overflow: hidden;
+    border-right: 1px solid white;
+    white-space: nowrap;
+    display: inline-block;
+    width: 0;
+    animation: typing 3s steps(43) forwards, 
+    blink 1s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 43ch;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.highlight {
+    color: #2384c0; /* Blue color */
+    text-decoration: underline; /* Underline */
+}
+
+/* Carousel styles */
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    width: calc(100% * 4); /* Adjust based on the number of images */
+    animation: scroll 20s linear infinite paused;
+}
+
+.carousel-track a {
+    flex: 0 0 auto; /* Adjust based on the number of images */
+    width: calc(25% - 20px);
+}
+
+.carousel-track img {
+    width: 100%;
+    height: 300px; /* Set a fixed height for the carousel images */
+    object-fit: cover; /* Crop the images to fit the container */
+    
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Styles for the indented text with vertical line */
+.indented-text {
+    border-left: 2px solid grey; /* Vertical line color */
+    padding-left: 40px; /* Space between the line and text */
+    margin-top: 20px; /* Space above the indented text */
+    color: white; /* Text color */
+    font-family: 'Source Code Pro', 'Courier New', monospace; /* Font family */
+    font-size: 30px;
+}
+
+.aboutme-container {
+    font-size: 30px;
+    color: white;
+    font-family: 'Source Code Pro', 'Courier New', monospace; /* Font family */
+}
+
+/* Highlighted text styles */
+.orange {
+    color: orange; /* Orange color for highlighted text */
+}
+
+.green {
+    color: greenyellow; 
+}
+
+.blue {
+    color: #2384c0; 
+}
+
+.red {
+    color: red; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-text {
+        font-size: 24px; /* Smaller font size for smaller screens */
+    }
+}
+
+/* resized slowpoke */
+.resized-image {
+    width: 250px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+}

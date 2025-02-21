@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebecca's Website</title>
+    <link rel="stylesheet" href="app.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="site-title">Rebecca Tam</div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="#about me">About Me</a></li>
+                <li><a href="extra.html">Extra</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container"></div>
+        <main>
+            <section id="profile" class="section-divider-1">
+                <div class="profile-container">
+                    <img src="079.png" alt="Profile Photo" id="profile-photo" class="resized-image">
+                    <div class="profile-text">
+                        <p>
+                            Hi! I’m Rebecca, a second year mechanical engineering student at the University of Toronto who enjoys tinkering with <br><span class="line">silly gadgets, IoT applications, and GenAI.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <a href="project1.html"><img src="images/utra.jpg" alt="Project 1"></a>
+                        <a href="project2.html"><img src="images/cadfinal.png" alt="Project 2"></a>
+                        <a href="project3.html"><img src="images/gestureink.JPG" alt="Project 3"></a>
+                        <a href="project4.html"><img src="images/igemrack.png" alt="Project 4"></a>
+                    </div>
+                </div>
+            </section>
+            <section id="about me" class="section-divider-1">
+                <div class="aboutme-container">
+                    <p> <span class="orange">Featured Projects</span> <span class="blue"> { </span> <span class="green"> <a href="portfolio.html"> /* click here for the portfolio page */ </a> </span></p>
+                    <div class="indented-text">
+                        <p>
+                            <span class="green">/* click on each project to learn more */</span>
+                            <br><br><span class="red">Hardware</span>: <span class="blue"><a href="portfolio.html">IoT Rack Fridge Management System</a>, <a href="portfolio.html">GestureInk</a></span>;
+                            <br><br><span class="red">Software</span>: <span class="blue"><a href="portfolio.html">SymptoMatch</a>, <a href="portfolio.html">ColdMail</a></span>;
+                            <br><br><span class="red">CAD/Mechanical</span>: <span class="blue"><a href="portfolio.html">CNC Machine</a>, <a href="portfolio.html">Gearbox</a></span>;
+                            <br><br><span class="red">Machine Learning</span>: <span class="blue"><a href="portfolio.html">Facial Landmark Recognition</a></span>;
+                        </p>
+                    </div>
+                    <p> <span class="blue">}</span> </p>
+
+                    <p> <span class="orange">Skillsets</span> <span class="blue"> { </span></p>
+                    <div class="indented-text">
+                        <p>
+                            <span class="green"> /* click for certifications */ </span>
+                            <br><br><span class="red">Technical Languages</span>: <span class="blue">Python, C/C++, HTML/CSS, Javascript</span>;
+                            <br><br><span class="red">Programs</span>: <span class="blue"><a href="portfolio.html">Solidworks (CAD)</a>, Minitab, Microsoft Suite</span>;
+                            <br><br><span class="red">Applications</span>: <span class="blue">MongoDB, MQTT, Arduino, OpenCV, pytorch</span>;
+                            <br><br><span class="red">Other</span>: <span class="blue">n/a</span>;
+                        </p>
+                    </div>
+                    <p> <span class="blue">}</span> </p>
+
+                    <p> <span class="orange">Experiences</span> <span class="blue"> { </span></p>
+                        <div class="indented-text">
+                            <p>
+                                <span class="green"> /* click for more details */ </span>
+                                <br><br><span class="red">2024</span>: <span class="blue">Hardware member @ iGEM Toronto</span>;
+                                <br><br><span class="red">2025</span>: <span class="blue">Business Specialist + Engineer @ Chem-e-cube UofT, 
+                                    <br> Hardware Lead @ iGEM Toronto</span>;
+                            </p>
+                        </div>
+                        <p> <span class="blue">}</span> </p>
+
+                    <p> <span class="orange">Contact Me</span> <span class="blue"> { </span></p>
+                    <div class="indented-text">
+                        <p>
+                            <span class="red">LinkedIn</span>: <span class="blue"><a href="https://www.linkedin.com/in/rebecca-zoe-tam" target="_blank">www.linkedin.com/in/rebecca-zoe-tam</a></span>;
+                            <br><br><span class="red">Email</span>: <span class="blue"><a href="mailto:Rebeccazoetam@gmail.com">Rebeccazoetam@gmail.com</a></span>;
+                            <br><br><span class="red">Github</span>: <span class="blue"><a href="https://github.com/Reebzoetam" target="_blank">https://github.com/Reebzoetam</a></span>;
+                            <br><br><span class="red">Resume</span>: <span class="blue">download here</span>;
+                        </p>
+                    </div>
+                    <p> <span class="blue">}</span> </p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div id="buttons">
+            <button onclick="location.href='resume.pdf'">Download Resume</button>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const line = document.querySelector('.profile-text .line');
+            line.style.animationDelay = '0s';
+
+            const carouselTrack = document.querySelector('.carousel-track');
+            let rotationCount = 0;
+            const maxRotations = 4;
+
+            function startCarousel() {
+                carouselTrack.style.animationPlayState = 'running';
+            }
+
+            function pauseCarousel() {
+                carouselTrack.style.animationPlayState = 'paused';
+                rotationCount++;
+                if (rotationCount < maxRotations) {
+                    setTimeout(startCarousel, 2000); // Pause for 2 seconds
+                }
+            }
+
+            carouselTrack.addEventListener('animationiteration', pauseCarousel);
+            startCarousel();
+        });
+    </script>
+</body>
+</html>

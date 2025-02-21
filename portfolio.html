@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Rebecca's Website</title>
+    <link rel="stylesheet" href="app.css"> <!-- Link to app.css -->
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .grid-item {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="extra.html">Extra</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="portfolio">
+            <h1>My Portfolio</h1>
+            <div class="grid-container">
+                <div class="grid-item" data-target="hardware_projects.html">
+                    <img src="project1.jpg" alt="Project 1">
+                    <p>Hardware Projects</p>
+                </div>
+                <div class="grid-item" data-target="software_projects.html">
+                    <img src="project2.jpg" alt="Project 2">
+                    <p>Software Projects</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section id="contact-info">
+            <h2>Contact Information</h2>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/rebecca-tam" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/rebeccatam" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li><a href="mailto:rebecca@example.com"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+        </section>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

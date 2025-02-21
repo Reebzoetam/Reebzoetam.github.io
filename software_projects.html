@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Projects - Rebecca's Website</title>
+    <link rel="stylesheet" href="app.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+        }
+        .carousel-buttons {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .carousel-buttons button {
+            padding: 10px;
+            margin: 5px;
+        }
+        .description {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .grid-item {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="site-title">Rebecca Tam</div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="extra.html">Extra</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="project">
+            <h1>Hardware Projects</h1>
+            <div class="carousel">
+                <img src="project1-1.jpg" alt="Project 1 Image 1">
+                <img src="project1-2.jpg" alt="Project 1 Image 2">
+                <img src="project1-3.jpg" alt="Project 1 Image 3">
+            </div>
+            <div class="carousel-buttons">
+                <button onclick="prevImage()">Previous</button>
+                <button onclick="nextImage()">Next</button>
+            </div>
+            <div class="description">
+                <p>Write a detailed description of Project 1 here.</p>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item" data-target="hardware_project1.html">
+                    <img src="hardware_project1.jpg" alt="Hardware Project 1">
+                    <p>Hardware Project 1</p>
+                </div>
+                <div class="grid-item" data-target="hardware_project2.html">
+                    <img src="hardware_project2.jpg" alt="Hardware Project 2">
+                    <p>Hardware Project 2</p>
+                </div>
+                <div class="grid-item" data-target="hardware_project3.html">
+                    <img src="hardware_project3.jpg" alt="Hardware Project 3">
+                    <p>Hardware Project 3</p>
+                </div>
+                <div class="grid-item" data-target="hardware_project4.html">
+                    <img src="hardware_project4.jpg" alt="Hardware Project 4">
+                    <p>Hardware Project 4</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section id="contact-info">
+            <h2>Contact Information</h2>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/rebecca-tam" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/rebeccatam" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li><a href="mailto:rebecca@example.com"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+        </section>
+    </footer>
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : images.length - 1;
+            showImage(currentImageIndex);
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex < images.length - 1) ? currentImageIndex + 1 : 0;
+            showImage(currentImageIndex);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showImage(currentImageIndex);
+        });
+
+        const gridItems = document.querySelectorAll('.grid-item');
+        gridItems.forEach(item => {
+            item.addEventListener('click', (event) => {
+                const targetPage = item.getAttribute('data-target');
+                window.location.href = targetPage;
+            });
+        });
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
